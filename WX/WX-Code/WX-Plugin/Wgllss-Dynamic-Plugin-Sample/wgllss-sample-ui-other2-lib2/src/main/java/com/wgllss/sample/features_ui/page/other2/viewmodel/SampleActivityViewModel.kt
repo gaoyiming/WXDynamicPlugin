@@ -12,6 +12,11 @@ import com.wgllss.nativex.MainActivity
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onEach
 
+/**
+ * @author wgllss
+ * @property str MutableLiveData<(String..String?)>
+ * @property url MutableLiveData<(String..String?)>
+ */
 class SampleActivityViewModel : BaseViewModel() {
 
     val str by lazy { MutableLiveData(" 我这是示例数据") }

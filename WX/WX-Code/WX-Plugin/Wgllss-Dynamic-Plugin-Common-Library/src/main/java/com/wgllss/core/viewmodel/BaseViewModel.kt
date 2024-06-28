@@ -46,9 +46,14 @@ abstract class BaseViewModel : ViewModel() {
     }
 
     protected suspend fun <T> Flow<T>.onStartShowAndFlowOnIOAndCatchAndOnCompletionAndHideAndCollect() {
+
         onStartAndShow().onCompletionAndHide().flowOnIOAndCatch().collect()//这里，开始结束全放在异步里面处理
     }
 
+    /**
+     *
+     * @param flowAsyncWork SuspendFunction0<Flow<T>>
+     */
     fun <T> flowAsyncWorkOnViewModelScopeLaunch(flowAsyncWork: suspend () -> Flow<T>) {
         viewModelScope.launch {
             flowAsyncWork.invoke().onStartShowAndFlowOnIOAndCatchAndOnCompletionAndHideAndCollect()

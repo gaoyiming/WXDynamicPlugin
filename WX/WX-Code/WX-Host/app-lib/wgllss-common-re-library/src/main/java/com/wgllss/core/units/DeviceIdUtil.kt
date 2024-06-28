@@ -49,6 +49,11 @@ object DeviceIdUtil {
         }
     }
 
+    /**
+     * 字节到16进制
+     * @param data ByteArray
+     * @return String?
+     */
     private fun bytesToHex(data: ByteArray): String? {
         val sb = StringBuilder()
         var stmp: String
